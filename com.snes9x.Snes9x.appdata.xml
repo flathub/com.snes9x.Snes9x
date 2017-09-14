@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <id type="desktop">com.snes9x.Snes9x.desktop</id>
+  <name>Snes9x</name>
+  <summary>A Super Nintendo emulator</summary>
+  <categories>
+    <category>Game</category>
+    <category>Emulator</category>
+  </categories>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/snes9xgit/snes9x/master/docs/snes9x-license.txt AND LGPL-2.1</project_license>
+  <url type="homepage">http://snes9x.com</url>
+  <releases>
+    <release date="2016-10-14"version="1.54.1"/>
+  </releases>
+</application>

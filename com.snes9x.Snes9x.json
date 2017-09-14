@@ -1,0 +1,41 @@
+{
+    "app-id": "com.snes9x.Snes9x",
+    "runtime": "org.freedesktop.Platform",
+    "sdk": "org.freedesktop.Sdk",
+    "runtime-version": "1.6",
+    "command": "snes9x-gtk",
+    "rename-desktop-file": "snes9x.desktop",
+    "rename-icon": "snes9x",
+    "finish-args": [
+        "--device=dri",
+        "--socket=x11",
+        "--socket=pulseaudio",
+        "--filesystem=home:ro"
+    ],
+    "modules": [
+        "shared-modules/SDL/SDL-1.2.15.json",
+        {
+            "name": "snes9x",
+            "subdir": "gtk",
+            "config-opts": [
+                "--with-gtk3"
+            ],
+            "post-install": [
+                "install -Dm644 com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 ../docs/snes9x-license.txt /app/share/licenses/snes9x/license.txt"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/snes9xgit/snes9x/archive/1.54.1.tar.gz",
+                    "sha256": "85862a22498bc418c37bd7c81a3089d9cc00af279b91e5f7fa8bea05e2e3027b"
+                },
+                {
+                    "type": "file",
+                    "path": "com.snes9x.Snes9x.appdata.xml",
+                    "dest": "gtk"
+                }
+            ]
+        }
+    ]
+}
