@@ -31,6 +31,14 @@
                     "sha256": "85862a22498bc418c37bd7c81a3089d9cc00af279b91e5f7fa8bea05e2e3027b"
                 },
                 {
+                    "type": "patch",
+                    "path": "75b867128b70ba21ffd16036d24a7095c74f36fc.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "93b5f11641fa22d4518f251d6e3db99219864677.patch"
+                },
+                {
                     "type": "file",
                     "path": "com.snes9x.Snes9x.appdata.xml",
                     "dest": "gtk"
