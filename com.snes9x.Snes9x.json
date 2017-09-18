@@ -10,7 +10,7 @@
         "--device=dri",
         "--socket=x11",
         "--socket=pulseaudio",
-        "--filesystem=home:ro"
+        "--filesystem=home"
     ],
     "modules": [
         "shared-modules/SDL/SDL-1.2.15.json",
