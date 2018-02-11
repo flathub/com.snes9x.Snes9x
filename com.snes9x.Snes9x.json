@@ -18,7 +18,9 @@
             "name": "snes9x",
             "subdir": "gtk",
             "config-opts": [
-                "--with-gtk3"
+                "--with-gtk3",
+                "--without-alsa",
+                "--without-system-zip"
             ],
             "post-install": [
                 "install -Dm644 com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
@@ -27,16 +29,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/archive/1.54.1.tar.gz",
-                    "sha256": "85862a22498bc418c37bd7c81a3089d9cc00af279b91e5f7fa8bea05e2e3027b"
-                },
-                {
-                    "type": "patch",
-                    "path": "75b867128b70ba21ffd16036d24a7095c74f36fc.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "93b5f11641fa22d4518f251d6e3db99219864677.patch"
+                    "url": "https://github.com/snes9xgit/snes9x/archive/1.55.tar.gz",
+                    "sha256": "d6b7e5a4cd786f23ff538b81cf816c6dbe37ddab02afe13e3fe54889e99860da"
                 },
                 {
                     "type": "file",
