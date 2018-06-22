@@ -19,6 +19,6 @@
   <project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/snes9xgit/snes9x/master/docs/snes9x-license.txt AND LGPL-2.1</project_license>
   <url type="homepage">http://snes9x.com</url>
   <releases>
-    <release date="2017-11-20"version="1.55"/>
+    <release date="2018-06-21" version="1.56.2"/>
   </releases>
 </application>
