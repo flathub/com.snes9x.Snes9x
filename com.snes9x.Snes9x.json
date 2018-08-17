@@ -7,7 +7,7 @@
     "rename-desktop-file": "snes9x.desktop",
     "rename-icon": "snes9x",
     "finish-args": [
-        "--device=dri",
+        "--device=all",
         "--socket=x11",
         "--socket=pulseaudio",
         "--filesystem=home"
