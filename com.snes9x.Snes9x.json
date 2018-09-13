@@ -2,7 +2,7 @@
     "app-id": "com.snes9x.Snes9x",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "1.6",
+    "runtime-version": "18.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x.desktop",
     "rename-icon": "snes9x",
