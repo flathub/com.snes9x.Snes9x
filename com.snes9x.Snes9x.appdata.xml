@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
-  <id type="desktop">com.snes9x.Snes9x.desktop</id>
+<component type="desktop">
+  <id>com.snes9x.Snes9x</id>
+  <launchable type="desktop-id">com.snes9x.Snes9x.desktop</launchable>
   <name>Snes9x</name>
   <summary>A Super Nintendo emulator</summary>
   <description>
     <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
   </description>
   <screenshots>
-    <screenshot type="default">http://www.snes9x.com/images/mrpg2.gif</screenshot>
-    <screenshot>http://www.snes9x.com/images/mrpg1.gif</screenshot>
-    <screenshot>http://www.snes9x.com/images/mariokart1.gif</screenshot>
+    <screenshot type="default">
+      <image>http://www.snes9x.com/images/mrpg2.gif</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.snes9x.com/images/mrpg1.gif</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.snes9x.com/images/mariokart1.gif</image>
+    </screenshot>
   </screenshots>
-  <categories>
-    <category>Game</category>
-    <category>Emulator</category>
-  </categories>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/snes9xgit/snes9x/master/docs/snes9x-license.txt AND LGPL-2.1</project_license>
+  <developer_name>Snes9x</developer_name>
+  <translation type="gettext">snes9x-gtk</translation>
   <url type="homepage">http://snes9x.com</url>
   <releases>
+    <release date="2018-11-10" version="1.57.0"/>
     <release date="2018-06-21" version="1.56.2"/>
   </releases>
-</application>
+  <update_contact>tingping_at_fedoraproject.org</update_contact>
+</component>

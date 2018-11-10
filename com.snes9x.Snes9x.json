@@ -9,17 +9,18 @@
     "finish-args": [
         "--device=all",
         "--socket=x11",
+        "--socket=wayland",
         "--socket=pulseaudio",
         "--filesystem=home"
     ],
     "modules": [
-        "shared-modules/SDL/SDL-1.2.15.json",
         {
             "name": "snes9x",
             "subdir": "gtk",
             "config-opts": [
-                "--with-gtk3",
                 "--without-alsa",
+                "--without-oss",
+                "--without-portaudio",
                 "--without-system-zip"
             ],
             "post-install": [
@@ -29,8 +30,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/archive/1.56.2.tar.gz",
-                    "sha256": "1557ade36c3b47aedf766b4504d141521f565664a6264c04f4c44f5a2dfada4f"
+                    "url": "https://github.com/snes9xgit/snes9x/releases/download/1.57/snes9x-1.57.tar.bz2",
+                    "sha256": "73bc07ac89e424d1c5d4e69621f22d8ca645bf2822d46857549ec3c3313663f0"
                 },
                 {
                     "type": "file",
