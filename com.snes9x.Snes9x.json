@@ -25,13 +25,13 @@
             ],
             "post-install": [
                 "install -Dm644 com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../docs/snes9x-license.txt /app/share/licenses/snes9x/license.txt"
+                "install -Dm644 ../LICENSE /app/share/licenses/snes9x/LICENSE"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/releases/download/1.57/snes9x-1.57.tar.bz2",
-                    "sha256": "73bc07ac89e424d1c5d4e69621f22d8ca645bf2822d46857549ec3c3313663f0"
+                    "url": "https://github.com/snes9xgit/snes9x/releases/download/1.58/snes9x-1.58.tar.bz2",
+                    "sha256": "f8250b4e8a5d3ab99fdd709584b8079975e024655cd646e4235186449d9da748"
                 },
                 {
                     "type": "file",

@@ -24,6 +24,7 @@
   <translation type="gettext">snes9x-gtk</translation>
   <url type="homepage">http://snes9x.com</url>
   <releases>
+    <release date="2018-12-16" version="1.58.0"/>
     <release date="2018-11-10" version="1.57.0"/>
     <release date="2018-06-21" version="1.56.2"/>
   </releases>
