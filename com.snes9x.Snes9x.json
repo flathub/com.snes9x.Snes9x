@@ -4,7 +4,7 @@
     "sdk": "org.freedesktop.Sdk",
     "runtime-version": "18.08",
     "command": "snes9x-gtk",
-    "rename-desktop-file": "snes9x.desktop",
+    "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
     "finish-args": [
         "--device=all",
@@ -15,28 +15,54 @@
     ],
     "modules": [
         {
-            "name": "snes9x",
-            "subdir": "gtk",
+            "name": "glslang",
+            "buildsystem": "cmake-ninja",
             "config-opts": [
-                "--without-alsa",
-                "--without-oss",
-                "--without-portaudio",
-                "--without-system-zip"
+                "-DBUILD_SHARED_LIBS=ON",
+                "-DENABLE_HLSL=OFF"
             ],
-            "post-install": [
-                "install -Dm644 com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../LICENSE /app/share/licenses/snes9x/LICENSE"
+            "cleanup": [
+                "/bin",
+                "/include",
+                "/lib/*.a"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/releases/download/1.58/snes9x-1.58.tar.bz2",
-                    "sha256": "f8250b4e8a5d3ab99fdd709584b8079975e024655cd646e4235186449d9da748"
+                    "url": "https://github.com/KhronosGroup/glslang/archive/7.9.2888.tar.gz",
+                    "sha256": "cb66779d0e6b5f07f0445bd58289a24e56e12693e71d75c8fae3db31ffacaf8c"
+                }
+            ]
+        },
+        {
+            "name": "snes9x",
+            "buildsystem": "meson",
+            "subdir": "gtk",
+            "config-opts": [
+                "-Dalsa=false",
+                "-Doss=false",
+                "-Dportaudio=false",
+                "-Dsystem-zip=false"
+            ],
+            "post-install": [
+                "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 ../../LICENSE /app/share/licenses/snes9x/LICENSE"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/snes9xgit/snes9x/archive/1.59.tar.gz",
+                    "sha256": "a7eba3b3f9177ad79653016d2e9bf4a1e322ae36b0d97de7f94e19ca6fb2b45c"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/KhronosGroup/SPIRV-Cross.git",
+                    "dest": "shaders/SPIRV-Cross",
+                    "commit": "1458bae62ec67ea7d12c5a13b740e23ed4bb226c"
                 },
                 {
                     "type": "file",
-                    "path": "com.snes9x.Snes9x.appdata.xml",
-                    "dest": "gtk"
+                    "path": "com.snes9x.Snes9x.appdata.xml"
                 }
             ]
         }
