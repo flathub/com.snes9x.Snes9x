@@ -51,8 +51,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/archive/1.59.2.tar.gz",
-                    "sha256": "1f623266c5f3e01a39d49f964e5f19a50a8fc66fe56303789fd4b13bacdeb76b"
+                    "url": "https://github.com/snes9xgit/snes9x/archive/1.60.tar.gz",
+                    "sha256": "861c8c0ab1d302d9df51e5ac4717a0069b33614a3f22bf3ab17ebf3405e58722"
                 },
                 {
                     "type": "git",
