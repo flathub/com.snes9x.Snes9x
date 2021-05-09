@@ -11,7 +11,7 @@
         "--socket=x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--filesystem=home:ro"
+        "--filesystem=home"
     ],
     "modules": [
         {
