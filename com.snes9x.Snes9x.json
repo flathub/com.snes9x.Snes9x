@@ -2,7 +2,7 @@
     "app-id": "com.snes9x.Snes9x",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "18.08",
+    "runtime-version": "20.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
@@ -11,7 +11,7 @@
         "--socket=x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--filesystem=home"
+        "--filesystem=home:ro"
     ],
     "modules": [
         {
@@ -28,9 +28,14 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/KhronosGroup/glslang/archive/7.9.2888.tar.gz",
-                    "sha256": "cb66779d0e6b5f07f0445bd58289a24e56e12693e71d75c8fae3db31ffacaf8c"
+                    "type": "git",
+                    "url": "https://github.com/KhronosGroup/glslang.git",
+                    "tag": "11.4.0",
+                    "commit": "18eef33bd7a4bf5ad8c69f99cb72022608cf6e73",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -50,15 +55,14 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/archive/1.60.tar.gz",
-                    "sha256": "861c8c0ab1d302d9df51e5ac4717a0069b33614a3f22bf3ab17ebf3405e58722"
-                },
-                {
                     "type": "git",
-                    "url": "https://github.com/KhronosGroup/SPIRV-Cross.git",
-                    "dest": "shaders/SPIRV-Cross",
-                    "commit": "1458bae62ec67ea7d12c5a13b740e23ed4bb226c"
+                    "url": "https://github.com/snes9xgit/snes9x.git",
+                    "tag": "1.60",
+                    "commit": "913b75d07c6e8d54e966e2c4a79d7c55428007df",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 },
                 {
                     "type": "file",
