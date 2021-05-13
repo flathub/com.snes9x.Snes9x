@@ -77,6 +77,30 @@
                     }
                 },
                 {
+                    "type": "git",
+                    "url": "https://github.com/Microsoft/DirectXMath.git",
+                    "dest": "win32/DirectXMath",
+                    "commit": "ffb2edbd1627e9eec75f68b4ff00e0861ad84ebe"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/KhronosGroup/glslang.git",
+                    "dest": "win32/gslang/src",
+                    "commit": "0527c9db8148ce37442fa4a9c99a2a23ad50b0b7"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/glennrp/libpng.git",
+                    "dest": "win32/libpng/src",
+                    "tag": "v1.6.37"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/madler/zlib.git",
+                    "dest": "win32/zlib/src",
+                    "tag": "v1.2.11"
+                },
+                {
                     "type": "file",
                     "path": "com.snes9x.Snes9x.appdata.xml"
                 }
@@ -84,3 +108,4 @@
         }
     ]
 }
+
