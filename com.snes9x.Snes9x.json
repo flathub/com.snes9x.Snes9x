@@ -6,6 +6,10 @@
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
+    "cleanup": [
+        "/include",
+        "/lib/*.a"
+    ],
     "finish-args": [
         "--device=all",
         "--share=ipc",
@@ -18,6 +22,9 @@
         {
             "name": "mm-common",
             "buildsystem": "meson",
+            "cleanup": [
+                "/bin"
+            ],
             "sources": [
                 {
                     "type": "archive",
