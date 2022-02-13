@@ -2,35 +2,116 @@
     "app-id": "com.snes9x.Snes9x",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "20.08",
+    "runtime-version": "21.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
+    "cleanup": [
+        "/include",
+        "/lib/*.a"
+    ],
     "finish-args": [
         "--device=all",
-        "--socket=x11",
+        "--share=ipc",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
         "--filesystem=home"
     ],
     "modules": [
         {
-            "name": "glslang",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DBUILD_SHARED_LIBS=ON",
-                "-DENABLE_HLSL=OFF"
-            ],
+            "name": "mm-common",
+            "buildsystem": "meson",
             "cleanup": [
-                "/bin",
-                "/include",
-                "/lib/*.a"
+                "/bin"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/KhronosGroup/glslang/archive/7.9.2888.tar.gz",
-                    "sha256": "cb66779d0e6b5f07f0445bd58289a24e56e12693e71d75c8fae3db31ffacaf8c"
+                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz",
+                    "sha256": "e954c09b4309a7ef93e13b69260acdc5738c907477eb381b78bb1e414ee6dbd8"
+                }
+            ]
+        },
+        {
+            "name": "sigc++",
+            "config-opts": [
+                "--disable-documentation"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsigc%2B%2B/2.10/libsigc%2B%2B-2.10.8.tar.xz",
+                    "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a"
+                }
+            ]
+        },
+        {
+            "name": "cairomm",
+            "config-opts": [
+                "--disable-documentation"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://cairographics.org/releases/cairomm-1.14.3.tar.xz",
+                    "sha256": "0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78"
+                }
+            ]
+        },
+        {
+            "name": "glibmm",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dbuild-documentation=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.2.tar.xz",
+                    "sha256": "b2a4cd7b9ae987794cbb5a1becc10cecb65182b9bb841868625d6bbb123edb1d"
+                }
+            ]
+        },
+        {
+            "name": "pangomm",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dbuild-documentation=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.2.tar.xz",
+                    "sha256": "57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4"
+                }
+            ]
+        },
+        {
+            "name": "atkmm",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dbuild-documentation=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.2.tar.xz",
+                    "sha256": "a0bb49765ceccc293ab2c6735ba100431807d384ffa14c2ebd30e07993fd2fa4"
+                }
+            ]
+        },
+        {
+            "name": "gtkmm",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dbuild-documentation=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.5.tar.xz",
+                    "sha256": "856333de86689f6a81c123f2db15d85db9addc438bc3574c36f15736aeae22e6"
                 }
             ]
         },
@@ -50,15 +131,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/snes9xgit/snes9x/archive/1.60.tar.gz",
-                    "sha256": "861c8c0ab1d302d9df51e5ac4717a0069b33614a3f22bf3ab17ebf3405e58722"
-                },
-                {
                     "type": "git",
-                    "url": "https://github.com/KhronosGroup/SPIRV-Cross.git",
-                    "dest": "shaders/SPIRV-Cross",
-                    "commit": "1458bae62ec67ea7d12c5a13b740e23ed4bb226c"
+                    "url": "https://github.com/snes9xgit/snes9x.git",
+                    "commit": "f1ac3dc6d3d0b7d591224ef544d66f6e56533698"
                 },
                 {
                     "type": "file",
