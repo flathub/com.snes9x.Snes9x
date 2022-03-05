@@ -133,7 +133,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/snes9xgit/snes9x.git",
-                    "commit": "f1ac3dc6d3d0b7d591224ef544d66f6e56533698"
+                    "tag": "1.61",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^(.*)$",
+                        "is-main-source": true
+                    }
                 },
                 {
                     "type": "file",
