@@ -138,7 +138,8 @@
                         "type": "git",
                         "tag-pattern": "^(.*)$",
                         "is-main-source": true
-                    }
+                    },
+                    "commit": "7e97bb59a1a65a95ad47549f52d301cc09dd8db5"
                 },
                 {
                     "type": "file",
