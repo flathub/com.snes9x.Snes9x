@@ -123,7 +123,7 @@
                 "-G Ninja",
                 "-DCMAKE_INSTALL_PREFIX=/usr",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-S"
+                "-S",
                 "."
             ],
             "post-install": [
