@@ -117,13 +117,14 @@
         },
         {
             "name": "snes9x",
-            "buildsystem": "meson",
+            "buildsystem": "cmake",
             "subdir": "gtk",
             "config-opts": [
-                "-Dalsa=false",
-                "-Doss=false",
-                "-Dportaudio=false",
-                "-Dsystem-zip=false"
+                "-G Ninja",
+                "-DCMAKE_INSTALL_PREFIX=/usr",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-S"
+                "."
             ],
             "post-install": [
                 "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
@@ -133,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/snes9xgit/snes9x.git",
-                    "tag": "1.61",
+                    "tag": "1.62.3",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^(.*)$",
