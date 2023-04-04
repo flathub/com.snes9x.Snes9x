@@ -153,8 +153,8 @@
                 "-DCMAKE_BUILD_TYPE=Release"              
             ],
             "post-install": [
-                "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../../LICENSE /app/share/licenses/snes9x/LICENSE"
+                "install -Dm644 com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 LICENSE /app/share/licenses/snes9x/LICENSE"
             ],
             "sources": [
                 {
