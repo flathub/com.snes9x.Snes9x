@@ -5,10 +5,7 @@
     "runtime-version": "21.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
-    "rename-icon": "snes9x",
-    "cleanup": [
-        "/include",
-        "/lib/*.a"
+    "rename-icon": "snes9x"
     ],
     "finish-args": [
         "--device=all",
