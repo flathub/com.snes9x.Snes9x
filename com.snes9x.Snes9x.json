@@ -132,6 +132,18 @@
             ]
         },
         {
+            "name": "minizip",
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/domoticz/minizip.git",
+                    "tag": "v1.2.13",
+                    "commit": "78eb93e8e0ba228f37b197d2022d66b73856c9ff"
+                }
+            ]
+        },
+        {
             "name": "snes9x",
             "buildsystem": "cmake",
             "subdir": "gtk",
