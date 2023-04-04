@@ -133,13 +133,19 @@
         },
         {
             "name": "minizip",
-            "buildsystem": "cmake",
+            "subdir": "contrib/minizip",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/domoticz/minizip.git",
-                    "tag": "v1.2.13",
-                    "commit": "78eb93e8e0ba228f37b197d2022d66b73856c9ff"
+                    "type": "archive",
+                    "url": "https://zlib.net/zlib-1.2.11.tar.xz",
+                    "sha256": "4ff941449631ace0d4d203e3483be9dbc9da454084111f97ea0a2114e19bf066"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "contrib/minizip/",
+                    "commands": [
+                        "autoreconf -ifv"
+                    ]
                 }
             ]
         },
