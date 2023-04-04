@@ -155,11 +155,11 @@
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-S",
                 ".",
-                "-B build",
-                "cd build",
-                "ninja"
+                "-B build"                
             ],
             "post-install": [
+                "cd build",
+                "ninja install",
                 "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
                 "install -Dm644 ../../LICENSE /app/share/licenses/snes9x/LICENSE"
             ],
