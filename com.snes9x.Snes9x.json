@@ -116,6 +116,22 @@
             ]
         },
         {
+            "name": "portaudio",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                    "/lib/cmake",
+                    "/share/doc"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/PortAudio/portaudio.git",
+                    "tag": "v19.7.0",
+                    "commit": "147dd722548358763a8b649b3e4b41dfffbcfbb6"
+                }
+            ]
+        },
+        {
             "name": "snes9x",
             "buildsystem": "cmake",
             "subdir": "gtk",
@@ -123,7 +139,6 @@
                 "-G Ninja",
                 "-DCMAKE_INSTALL_PREFIX=/usr",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-DCMAKE_USE_PORTAUDIO='false'",
                 "-S",
                 "."
             ],
