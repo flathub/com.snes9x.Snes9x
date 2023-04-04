@@ -132,7 +132,8 @@
             ]
         },
         {
-            "name": "minizip"
+            "name": "minizip",
+            "buildsystem": "cmake"
             ],
             "sources": [
                 {
