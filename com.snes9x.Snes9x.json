@@ -6,10 +6,6 @@
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
-    "cleanup": [
-        "/include",
-        "/lib/*.a"
-    ],
     "finish-args": [
         "--device=all",
         "--share=ipc",
@@ -116,24 +112,55 @@
             ]
         },
         {
+            "name": "portaudio",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                    "/lib/cmake",
+                    "/share/doc"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/PortAudio/portaudio.git",
+                    "tag": "v19.7.0",
+                    "commit": "147dd722548358763a8b649b3e4b41dfffbcfbb6"
+                }
+            ]
+        },
+        {
+            "name": "minizip",
+            "subdir": "contrib/minizip",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://zlib.net/zlib-1.2.13.tar.xz",
+                    "sha256": "d14c38e313afc35a9a8760dadf26042f51ea0f5d154b0630a31da0540107fb98"
+                },
+                {
+                    "type": "script",
+                    "dest": "contrib/minizip/",
+                    "commands": [
+                        "autoreconf -ifv"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "snes9x",
-            "buildsystem": "meson",
+            "buildsystem": "cmake-ninja",
             "subdir": "gtk",
             "config-opts": [
-                "-Dalsa=false",
-                "-Doss=false",
-                "-Dportaudio=false",
-                "-Dsystem-zip=false"
+                "-DCMAKE_BUILD_TYPE=Release"              
             ],
             "post-install": [
-                "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../../LICENSE /app/share/licenses/snes9x/LICENSE"
+                "install -Dm644 ../../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 ../../../LICENSE /app/share/licenses/snes9x/LICENSE"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/snes9xgit/snes9x.git",
-                    "tag": "1.61",
+                    "tag": "1.62.3",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^(.*)$",
