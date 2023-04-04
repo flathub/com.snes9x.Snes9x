@@ -2,7 +2,7 @@
     "app-id": "com.snes9x.Snes9x",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "21.08",
+    "runtime-version": "22.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
@@ -153,8 +153,8 @@
                 "-DCMAKE_BUILD_TYPE=Release"              
             ],
             "post-install": [
-                "install -Dm644 ../../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../../../LICENSE /app/share/licenses/snes9x/LICENSE"
+                "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 ../../LICENSE /app/share/licenses/snes9x/LICENSE"
             ],
             "sources": [
                 {
