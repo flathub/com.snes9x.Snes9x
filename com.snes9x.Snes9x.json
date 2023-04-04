@@ -6,7 +6,6 @@
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x"
-    ],
     "finish-args": [
         "--device=all",
         "--share=ipc",
