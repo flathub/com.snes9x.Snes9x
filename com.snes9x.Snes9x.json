@@ -158,7 +158,8 @@
                 "-DCMAKE_INSTALL_PREFIX=/usr",
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-S",
-                "."
+                ".",
+                "-B build"
             ],
             "post-install": [
                 "install -Dm644 ../../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
