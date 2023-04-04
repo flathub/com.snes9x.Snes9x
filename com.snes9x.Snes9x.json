@@ -142,7 +142,7 @@
                 },
                 {
                     "type": "script",
-                    "dest-filename": "contrib/minizip/",
+                    "dest": "contrib/minizip/",
                     "commands": [
                         "autoreconf -ifv"
                     ]
