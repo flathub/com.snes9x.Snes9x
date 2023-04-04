@@ -133,8 +133,7 @@
         },
         {
             "name": "minizip",
-            "buildsystem": "cmake"
-            ],
+            "buildsystem": "cmake",
             "sources": [
                 {
                     "type": "git",
