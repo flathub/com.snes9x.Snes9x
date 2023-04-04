@@ -147,7 +147,7 @@
         },
         {
             "name": "snes9x",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "subdir": "gtk",
             "config-opts": [
                 "-DCMAKE_INSTALL_PREFIX=/usr",
