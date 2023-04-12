@@ -115,8 +115,8 @@
             "name": "portaudio",
             "buildsystem": "cmake-ninja",
             "cleanup": [
-                    "/lib/cmake",
-                    "/share/doc"
+                "/lib/cmake",
+                "/share/doc"
             ],
             "sources": [
                 {
@@ -150,7 +150,7 @@
             "buildsystem": "cmake-ninja",
             "subdir": "gtk",
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"              
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
                 "install -Dm644 ../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
@@ -165,7 +165,8 @@
                         "type": "git",
                         "tag-pattern": "^(.*)$",
                         "is-main-source": true
-                    }
+                    },
+                    "commit": "8b82d487937d9ea39f7229d280c6f6686c415fe7"
                 },
                 {
                     "type": "file",
