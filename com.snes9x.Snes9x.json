@@ -2,159 +2,40 @@
     "app-id": "com.snes9x.Snes9x",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "command": "snes9x-gtk",
     "rename-desktop-file": "snes9x-gtk.desktop",
     "rename-icon": "snes9x",
     "finish-args": [
         "--device=all",
         "--share=ipc",
-        "--socket=fallback-x11",
+        "--share=network",
         "--socket=wayland",
+        "--socket=fallback-x11",
         "--socket=pulseaudio",
         "--filesystem=home"
     ],
+    "cleanup-commands": [
+        "rm -f ${FLATPAK_DEST}/bin/mm-common*",
+        "rm -rf ${FLATPAK_DEST}/include",
+        "rm -rf ${FLATPAK_DEST}/lib/{atkmm*,cmake,cairomm*,lib{cairomm*.la,minizip.{l,}a,sigc*.la,portaudio.a},gdkmm*,giomm*,glibmm*,gtkmm*,pangomm*,sigc++*,pkgconfig}",
+        "rm -rf ${FLATPAK_DEST}/share/{aclocal,doc,man,mm-common,pkgconfig}"
+    ],
+    "build-options": {
+        "strip": true,
+        "no-debuginfo": true
+    },
     "modules": [
-        {
-            "name": "mm-common",
-            "buildsystem": "meson",
-            "cleanup": [
-                "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz",
-                    "sha256": "e954c09b4309a7ef93e13b69260acdc5738c907477eb381b78bb1e414ee6dbd8"
-                }
-            ]
-        },
-        {
-            "name": "sigc++",
-            "config-opts": [
-                "--disable-documentation"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsigc%2B%2B/2.10/libsigc%2B%2B-2.10.8.tar.xz",
-                    "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a"
-                }
-            ]
-        },
-        {
-            "name": "cairomm",
-            "config-opts": [
-                "--disable-documentation"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://cairographics.org/releases/cairomm-1.14.3.tar.xz",
-                    "sha256": "0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78"
-                }
-            ]
-        },
-        {
-            "name": "glibmm",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-documentation=false"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.2.tar.xz",
-                    "sha256": "b2a4cd7b9ae987794cbb5a1becc10cecb65182b9bb841868625d6bbb123edb1d"
-                }
-            ]
-        },
-        {
-            "name": "pangomm",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-documentation=false"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.2.tar.xz",
-                    "sha256": "57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4"
-                }
-            ]
-        },
-        {
-            "name": "atkmm",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-documentation=false"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.2.tar.xz",
-                    "sha256": "a0bb49765ceccc293ab2c6735ba100431807d384ffa14c2ebd30e07993fd2fa4"
-                }
-            ]
-        },
-        {
-            "name": "gtkmm",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-documentation=false"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.5.tar.xz",
-                    "sha256": "856333de86689f6a81c123f2db15d85db9addc438bc3574c36f15736aeae22e6"
-                }
-            ]
-        },
-        {
-            "name": "portaudio",
-            "buildsystem": "cmake-ninja",
-            "cleanup": [
-                    "/lib/cmake",
-                    "/share/doc"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/PortAudio/portaudio.git",
-                    "tag": "v19.7.0",
-                    "commit": "147dd722548358763a8b649b3e4b41dfffbcfbb6"
-                }
-            ]
-        },
-        {
-            "name": "minizip",
-            "subdir": "contrib/minizip",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://zlib.net/zlib-1.2.13.tar.xz",
-                    "sha256": "d14c38e313afc35a9a8760dadf26042f51ea0f5d154b0630a31da0540107fb98"
-                },
-                {
-                    "type": "script",
-                    "dest": "contrib/minizip/",
-                    "commands": [
-                        "autoreconf -ifv"
-                    ]
-                }
-            ]
-        },
         {
             "name": "snes9x",
             "buildsystem": "cmake-ninja",
             "subdir": "gtk",
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"              
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
-                "install -Dm644 ../com.snes9x.Snes9x.appdata.xml /app/share/appdata/com.snes9x.Snes9x.appdata.xml",
-                "install -Dm644 ../LICENSE /app/share/licenses/snes9x/LICENSE"
+                "install -Dm644 ../com.snes9x.Snes9x.appdata.xml ${FLATPAK_DEST}/share/metainfo/com.snes9x.Snes9x.appdata.xml",
+                "install -Dm644 ../LICENSE ${FLATPAK_DEST}/share/licenses/snes9x/LICENSE"
             ],
             "sources": [
                 {
@@ -170,6 +51,134 @@
                 {
                     "type": "file",
                     "path": "com.snes9x.Snes9x.appdata.xml"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "mm-common",
+                    "buildsystem": "meson",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz",
+                            "sha256": "e954c09b4309a7ef93e13b69260acdc5738c907477eb381b78bb1e414ee6dbd8"
+                        }
+                    ]
+                },
+                {
+                    "name": "sigc++",
+                    "config-opts": [
+                        "--disable-documentation"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/libsigc%2B%2B/2.10/libsigc%2B%2B-2.10.8.tar.xz",
+                            "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a"
+                        }
+                    ]
+                },
+                {
+                    "name": "cairomm",
+                    "config-opts": [
+                        "--disable-documentation"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://cairographics.org/releases/cairomm-1.14.3.tar.xz",
+                            "sha256": "0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78"
+                        }
+                    ]
+                },
+                {
+                    "name": "glibmm",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-documentation=false",
+                        "-Dbuild-examples=false"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.2.tar.xz",
+                            "sha256": "b2a4cd7b9ae987794cbb5a1becc10cecb65182b9bb841868625d6bbb123edb1d"
+                        }
+                    ]
+                },
+                {
+                    "name": "pangomm",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-documentation=false"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.2.tar.xz",
+                            "sha256": "57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4"
+                        }
+                    ]
+                },
+                {
+                    "name": "atkmm",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-documentation=false"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.2.tar.xz",
+                            "sha256": "a0bb49765ceccc293ab2c6735ba100431807d384ffa14c2ebd30e07993fd2fa4"
+                        }
+                    ]
+                },
+                {
+                    "name": "gtkmm",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-documentation=false",
+                        "-Dbuild-demos=false",
+                        "-Dbuild-tests=false"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.5.tar.xz",
+                            "sha256": "856333de86689f6a81c123f2db15d85db9addc438bc3574c36f15736aeae22e6"
+                        }
+                    ]
+                },
+                {
+                    "name": "portaudio",
+                    "buildsystem": "cmake-ninja",
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/PortAudio/portaudio.git",
+                            "tag": "v19.7.0",
+                            "commit": "147dd722548358763a8b649b3e4b41dfffbcfbb6"
+                        }
+                    ]
+                },
+                {
+                    "name": "minizip",
+                    "subdir": "contrib/minizip",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://zlib.net/zlib-1.3.tar.xz",
+                            "sha256": "8a9ba2898e1d0d774eca6ba5b4627a11e5588ba85c8851336eb38de4683050a7"
+                        },
+                        {
+                            "type": "script",
+                            "dest": "contrib/minizip/",
+                            "commands": [
+                                "autoreconf -ifv"
+                            ]
+                        }
+                    ]
                 }
             ]
         }

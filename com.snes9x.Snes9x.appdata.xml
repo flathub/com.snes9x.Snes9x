@@ -3,9 +3,13 @@
   <id>com.snes9x.Snes9x</id>
   <launchable type="desktop-id">com.snes9x.Snes9x.desktop</launchable>
   <name>Snes9x</name>
-  <summary>A Super Nintendo emulator</summary>
+  <summary>A Super Nintendo emulator</summary>
+  <summary xml:lang="de">Ein Super Nintendo‑Emulator</summary>
+  <summary xml:lang="pl">Emulator Super Nintendo</summary>
   <description>
-    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
+    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically enables you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
+    <p xml:lang="de">Snes9x ist ein platformübergreifender und kostenloser Super Nintendo Entertainment System (SNES)‑Emulator. Im Grunde ermöglicht es die meisten für die SNES und Super Famicom Nintendo‑Spielsysteme entworfenen Spiele auf dem PC oder einer Arbeitsstation zu spielen, inklusive manch echter Perlen, die nur in Japan veröffentlicht wurden.</p>
+    <p xm:lag="pl">Snes9x, to wieloplatformowe i bezpłatnie oprogramowanie emulatora Super Nintendo Entertainment System (SNES). W gruncie rzeczy umożliwia ono Ci grać w większość gier zaprojektowanych dla systemów gier Nintendo SNES i Super Famicom na Twoim PC lub stacji roboczej, włącznie z niektórymi prawdziwymi perełkami, które wydano wyłącznie w Japonii.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -23,7 +27,23 @@
   <developer_name>Snes9x</developer_name>
   <translation type="gettext">snes9x-gtk</translation>
   <url type="homepage">http://snes9x.com</url>
+  <url type="bugtracker">https://github.com/snes9xgit/snes9x/issues</url>
+  <url type="faq">http://www.snes9x.com/phpbb3/viewforum.php?f=2</url>
+  <url type="translate">https://github.com/snes9xgit/snes9x/blob/master/gtk/po</url>
+  <url type="vcs-browser">https://github.com/snes9xgit/snes9x</url>
   <content_rating type="oars-1.1" />
+  <provides>
+    <binary>snes9x-gtk</binary>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+    <internet>always</internet>
+  </supports>
+  <recommends>
+    <control>gamepad</control>
+  </recommends>
   <releases>
     <release date="2022-03-04" version="1.62.3"/>
     <release date="2022-03-04" version="1.61final"/>
