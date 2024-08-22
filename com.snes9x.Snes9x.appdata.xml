@@ -23,8 +23,11 @@
   <developer_name>Snes9x</developer_name>
   <translation type="gettext">snes9x-gtk</translation>
   <url type="homepage">http://snes9x.com</url>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.63" date="2024-08-22">
+      <description></description>
+    </release>
     <release date="2022-03-04" version="1.62.3"/>
     <release date="2022-03-04" version="1.61final"/>
     <release date="2022-02-02" version="1.61beta"/>
