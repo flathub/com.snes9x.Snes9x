@@ -37,6 +37,19 @@
             "sources": [
                 {
                     "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsigc%2B%2B/2.12/libsigc%2B%2B-2.12.1.tar.xz",
+                    "sha256": "a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843"
+                }
+            ]
+        },
+        {
+            "name": "sigc++",
+            "config-opts": [
+                "--disable-documentation"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
                     "url": "https://download.gnome.org/sources/libsigc%2B%2B/3.6/libsigc%2B%2B-3.6.0.tar.xz",
                     "sha256": "c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17"
                 }
