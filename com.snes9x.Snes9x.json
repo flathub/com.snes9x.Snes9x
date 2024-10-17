@@ -119,8 +119,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtkmm/3.97/gtkmm-3.97.1.tar.xz",
-                    "sha256": "8faf90e61a423423afd7d4d70517666d6a09c17de490506e866c210c6a4a1283"
+                    "url": "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.9.tar.xz",
+                    "sha256": "30d5bfe404571ce566a8e938c8bac17576420eb508f1e257837da63f14ad44ce"
                 }
             ]
         },
