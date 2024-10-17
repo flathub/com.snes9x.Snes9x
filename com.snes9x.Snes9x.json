@@ -77,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.78/glibmm-2.78.1.tar.xz",
-                    "sha256": "f473f2975d26c3409e112ed11ed36406fb3843fa975df575c22d4cb843085f61"
+                    "url": "https://download.gnome.org/sources/glibmm/2.74/glibmm-2.74.1.tar.xz",
+                    "sha256": "1b78fb9d282a76b322866d5e2eeff288a25dec9c9464d85cd34969cd40cc1999"
                 }
             ]
         },
