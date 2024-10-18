@@ -10,12 +10,15 @@
   <screenshots>
     <screenshot type="default">
       <image>http://www.snes9x.com/images/mrpg2.gif</image>
+      <caption>An image of the emulator running mario rpg</caption>
     </screenshot>
     <screenshot>
       <image>http://www.snes9x.com/images/mrpg1.gif</image>
+      <caption>An image of the emulator running mario rpg</caption>
     </screenshot>
     <screenshot>
       <image>http://www.snes9x.com/images/mariokart1.gif</image>
+      <caption>An image of the emulator running mario kart</caption>
     </screenshot>
   </screenshots>
   <metadata_license>CC0-1.0</metadata_license>
@@ -23,8 +26,9 @@
   <developer_name>Snes9x</developer_name>
   <translation type="gettext">snes9x-gtk</translation>
   <url type="homepage">http://snes9x.com</url>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <releases>
+    <release date="2024-07-06" version="1.63"/>
     <release date="2022-03-04" version="1.62.3"/>
     <release date="2022-03-04" version="1.61final"/>
     <release date="2022-02-02" version="1.61beta"/>
