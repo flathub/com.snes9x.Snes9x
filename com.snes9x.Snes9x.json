@@ -12,7 +12,8 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--filesystem=home"
+        "--filesystem=home",
+	"--persist=."
     ],
     "modules": [
         {
