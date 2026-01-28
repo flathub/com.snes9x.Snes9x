@@ -5,7 +5,10 @@
   <name>Snes9x</name>
   <summary>A Super Nintendo emulator</summary>
   <description>
-    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
+    <p>**This is a community package of Snes9x and not officially supported by Snes9x.**</p>
+    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. 
+      It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems 
+      on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
   </description>
   <screenshots>
     <screenshot type="default">
