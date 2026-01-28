@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>com.snes9x.Snes9x</id>
   <launchable type="desktop-id">com.snes9x.Snes9x.desktop</launchable>
   <name>Snes9x</name>
   <summary>A Super Nintendo emulator</summary>
   <description>
-    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
+    <p>**This is a community package of Snes9x and not officially supported by Snes9x.**</p>
+    <p>Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. 
+      It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems 
+      on your PC or Workstation; which includes some real gems that were only ever released in Japan.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -22,10 +25,14 @@
     </screenshot>
   </screenshots>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/snes9xgit/snes9x/master/docs/snes9x-license.txt AND LGPL-2.1</project_license>
-  <developer_name>Snes9x</developer_name>
+  <project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/snes9xgit/snes9x/refs/heads/master/LICENSE</project_license>
+  <developer id="com.snes9x">
+    <name>Snes9x</name>
+  </developer>
   <translation type="gettext">snes9x-gtk</translation>
-  <url type="homepage">http://snes9x.com</url>
+  <url type="homepage">https://www.snes9x.com</url>
+  <url type="bugtracker">https://github.com/snes9xgit/snes9x/issues</url>
+  <url type="vcs-browser">https://github.com/snes9xgit/snes9x</url>
   <content_rating type="oars-1.1"/>
   <releases>
     <release date="2024-07-06" version="1.63"/>
